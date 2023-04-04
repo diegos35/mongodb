@@ -1,0 +1,17 @@
+use("platzi_store")
+
+db.inventory.updateOne(
+    {_id: 4},
+    { $push: {
+        tags: "headphone"
+    }  
+})   
+
+// insert many values into array
+db.inventory.updateOne({_id: 4}, {
+    $push: {
+      tags:{
+        $each:["headphone","wireless"]
+      }
+    }
+})

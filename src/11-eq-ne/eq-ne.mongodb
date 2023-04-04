@@ -1,0 +1,12 @@
+use("platzi_store")
+
+
+//using $eq
+//db.inventory.find({qty: 20}) //implicita 
+//db.inventory.find({qty: {$eq: 20}}) //explicita
+//db.inventory.find({ "item.code": "123"})
+//db.inventory.find({ "item.code": {$eq: "123"}})
+
+//using $ne
+
+db.inventory.find({qty: {$ne: 20}})

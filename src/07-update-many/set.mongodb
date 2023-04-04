@@ -1,0 +1,39 @@
+use("sample_training")
+
+db.zips.find({city: "CLEVELAND"}).count()
+
+//set
+/* db.zips.updateMany(
+    //query
+    {city: "CLEVELAND"},
+    //update- operators
+    {
+        $set: {
+        myAttr:"hola"
+    }
+    }
+) */
+
+//Rename
+/* db.zips.updateMany(
+    //query
+    {city: "CLEVELAND"},
+    //update- operators
+    {
+        $rename: {
+        myAttr:"my_data"
+    }
+    }
+) */
+
+//unset
+db.zips.updateMany(
+    //query
+    {city: "CLEVELAND"},
+    //update- operators
+    {
+        $unset: {
+        my_data:""
+    }
+    }
+)

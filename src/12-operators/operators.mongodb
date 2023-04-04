@@ -1,0 +1,34 @@
+use("platzi_store")
+
+
+/*
+$gt (greater than - >)
+$gte (greater than or equal - >=)
+$lt (less than - <)
+$lte (less than or equal - <=) 
+*/
+
+/* using $gt(>) & $gte (>=) */
+//db.inventory.find({qty: {$gt:20}})
+//db.inventory.find({qty: {$gte:20}})
+
+/* using $lt(<) & $let (<=) */
+//db.inventory.find({qty: {$lt:20}})
+//db.inventory.find({qty: {$lte:20}})
+
+//join
+//db.inventory.find({qty: {$gte:25, $lte:35}})
+
+/* db.inventory.find({
+    "item.name": "ab",
+    qty: {$gte:20, $lte:25}
+}) */
+/* db.inventory.find({
+    "item.code": "123",
+    qty: {$gte:20, $lte:25}
+}) */
+
+db.inventory.find({
+    "item.code": {$ne:"123"},
+    qty: {$gte:20, $lte:25}
+})

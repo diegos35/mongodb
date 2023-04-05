@@ -1,0 +1,34 @@
+use("platzi_store")
+
+//$in: objects, values &arrays
+
+//db.inventory.find({qty:{$in: [20,25]}})
+//db.inventory.find({tags:{$in:["school", "electronics"]}})
+
+//$nin, values & arrays
+//db.inventory.find({qty:{$in: [20,25]}})
+//db.inventory.find({qty:{$nin: [20,25]}})
+//db.inventory.find({tags:{$nin:["book", "electronics"]}})
+
+
+//arrays
+//db.inventory.find({tags:"book" })
+//db.inventory.find({tags:["school", "book"] })
+
+//arrays all
+//db.inventory.find({tags: {$all: ["book", "school"]} })
+
+
+//size
+//db.inventory.find({tags:{$size:2}})
+
+//elementMatch
+
+//db.survey.find({results: {$elemMatch:{product:"xyz"}} })
+db.survey.find({
+    results: {
+        $elemMatch:{
+            product:"xyz", 
+            score:{$gte:7}
+        }} 
+    })
